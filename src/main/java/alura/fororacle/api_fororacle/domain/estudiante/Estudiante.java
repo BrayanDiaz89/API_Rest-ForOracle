@@ -17,6 +17,8 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(of="id_estudiante")
 public class Estudiante {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_estudiante;
     private String nombreEstudiante;
     private String email;

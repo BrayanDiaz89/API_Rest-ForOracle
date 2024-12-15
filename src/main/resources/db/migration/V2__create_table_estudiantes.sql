@@ -3,7 +3,8 @@ create table estudiantes(
         nombre varchar(100) not null,
         email varchar(100) not null unique,
         fechaRegistro datetime not null,
+        id_curso bigint not null,
 
         primary key(id_estudiante),
-        constraint fk_id_curso_estudiante foreign key(id_curso) references cursos(id_curso)
+        constraint fk_estudiantes_id_curso foreign key(id_curso) references cursos(id_curso)
         );
