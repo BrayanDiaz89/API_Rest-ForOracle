@@ -1,6 +1,7 @@
 package alura.fororacle.api_fororacle.domain.cursos;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -11,13 +12,29 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of="id_curso")
+@EqualsAndHashCode(of="idCurso")
 public class Curso {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_curso;
-    private String nombreCurso;
+    private Long idCurso;
+    private String nombre;
     private String descripcion;
 
+    public Long getIdCurso() {
+        return idCurso;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public Curso(@Valid DatosRegistrarCurso datosRegistrarCurso) {
+        this.nombre = datosRegistrarCurso.nombre();
+        this.descripcion = datosRegistrarCurso.descripcion();
+    }
 }

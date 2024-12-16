@@ -14,12 +14,12 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of="id_instructor")
+@EqualsAndHashCode(of="idInstructor")
 public class Instructor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_instructor;
+    private Long idInstructor;
     private String nombre;
     private String email;
     private LocalDateTime fechaRegistro;
@@ -27,6 +27,6 @@ public class Instructor {
     //Creación de relación uno a muchos con Cursos, campo id_curso
     //Un instructor pertenece a almenos un curso
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="id_curso")
+    @JoinColumn(name="idCurso")
     private Curso curso;
 }

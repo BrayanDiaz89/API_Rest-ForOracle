@@ -1,7 +1,7 @@
 package alura.fororacle.api_fororacle.domain.cursos;
 
 public record DatosListadoCursos(
-                    Long id,
+                    Long idCurso,
                     String nombreCurso,
                     String descripcion
         ) {

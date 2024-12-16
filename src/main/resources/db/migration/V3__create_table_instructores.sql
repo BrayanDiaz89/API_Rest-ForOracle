@@ -1,10 +1,10 @@
 create table instructores(
-        id_instructor bigint not null auto_increment,
+        idInstructor bigint not null auto_increment,
         nombre varchar(100) not null,
         email varchar(100) not null unique,
         fechaRegistro datetime not null,
-        id_curso bigint not null,
+        idCurso bigint not null,
 
-        primary key(id_instructor),
-        constraint fk_instructores_id_curso foreign key(id_curso) references cursos(id_curso)
+        primary key(idInstructor),
+        constraint fk_instructores_idCurso foreign key(idCurso) references cursos(idCurso)
         );
