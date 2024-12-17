@@ -1,13 +1,13 @@
 create table respuestas(
-        idRespuesta bigint not null auto_increment,
+        id bigint not null auto_increment,
         contenido LONGTEXT not null,
-        fechaCreacion datetime not null,
-        idEstudiante bigint not null,
-        idInstructor bigint not null,
-        idTopico bigint not null,
+        fecha datetime not null,
+        id_estudiante bigint not null,
+        id_instructor bigint not null,
+        id_topico bigint not null,
 
-        primary key(idRespuesta),
-        constraint fk_respuestas_idEstudiante foreign key(idEstudiante) references estudiantes(idEstudiante),
-        constraint fk_respuestas_idInstructor foreign key(idInstructor) references instructores(idInstructor),
-        constraint fk_respuestas_idTopico foreign key(idTopico) references topicos(idTopico)
+        primary key(id),
+        constraint fk_respuestas_id_estudiante foreign key(id_estudiante) references estudiantes(id),
+        constraint fk_respuestas_id_instructor foreign key(id_instructor) references instructores(id),
+        constraint fk_respuestas_id_topico foreign key(id_topico) references topicos(id)
         );

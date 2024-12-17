@@ -1,12 +1,12 @@
 create table topicos(
-        idTopico bigint not null auto_increment,
+        id bigint not null auto_increment,
         titulo varchar(100) not null,
         descripcion LONGTEXT not null,
-        fechaCreacion datetime not null,
-        idCurso bigint not null,
-        idEstudiante bigint not null,
+        fecha datetime not null,
+        id_curso bigint not null,
+        id_estudiante bigint not null,
 
-        primary key(idTopico),
-        constraint fk_topicos_idCurso foreign key(idCurso) references cursos(idCurso),
-        constraint fk_topicos_idEstudiante foreign key(idEstudiante) references estudiantes(idEstudiante)
+        primary key(id),
+        constraint fk_topicos_id_curso foreign key(id_curso) references cursos(id),
+        constraint fk_topicos_id_estudiante foreign key(id_estudiante) references estudiantes(id)
         );

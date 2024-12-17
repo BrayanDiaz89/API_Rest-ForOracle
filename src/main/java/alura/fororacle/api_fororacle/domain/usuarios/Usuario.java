@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "usuarios")
 @Entity(name = "Usuario")
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of = "id_usuario")
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Usuario {
 
     @Id

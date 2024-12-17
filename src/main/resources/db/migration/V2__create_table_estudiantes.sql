@@ -1,10 +1,10 @@
 create table estudiantes(
-        idEstudiante bigint not null auto_increment,
+        id bigint not null auto_increment,
         nombre varchar(100) not null,
         email varchar(100) not null unique,
-        fechaRegistro datetime not null,
-        idCurso bigint not null,
+        fecha datetime not null,
+        id_curso bigint not null,
 
-        primary key(idEstudiante),
-        constraint fk_estudiantes_idCurso foreign key(idCurso) references cursos(idCurso)
+        primary key(id),
+        constraint fk_estudiantes_id_curso foreign key(id_curso) references cursos(id)
         );

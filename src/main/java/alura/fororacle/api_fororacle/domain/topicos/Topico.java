@@ -15,22 +15,22 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "idTopico")
+@EqualsAndHashCode(of = "id")
 public class Topico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idTopico;
+    private Long id;
     private String titulo;
     private String descripcion;
-    private LocalDateTime fechaCreacion;
+    private LocalDateTime fecha;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idCurso")
+    @JoinColumn(name = "id_curso")
     private Curso curso;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idEstudiante")
+    @JoinColumn(name = "id_estudiante")
     private Estudiante estudiante;
 
 
