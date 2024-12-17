@@ -23,11 +23,14 @@ public class Instructor {
     private String nombre;
     private String email;
     private LocalDateTime fecha;
+    private boolean activo;
 
     //Creación de relación uno a muchos con Cursos, campo id_curso
     //Un instructor pertenece a almenos un curso
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_curso")
     private Curso curso;
+
+    public void desactivarInstructor() { this.activo = false; }
 
 }

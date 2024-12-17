@@ -24,6 +24,7 @@ public class Topico {
     private String titulo;
     private String descripcion;
     private LocalDateTime fecha;
+    private boolean noResuelto;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_curso")
@@ -32,6 +33,8 @@ public class Topico {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_estudiante")
     private Estudiante estudiante;
+
+    public void marcarComoResueltoElTopico(){ this.noResuelto = false; }
 
 
 }
