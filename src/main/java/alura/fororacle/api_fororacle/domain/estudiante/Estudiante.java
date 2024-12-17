@@ -23,13 +23,23 @@ public class Estudiante {
     private String nombre;
     private String email;
     private LocalDateTime fecha;
-    private boolean activo;
+    private boolean activo = true;
 
     //Creación de relación uno a muchos con Cursos, campo id_curso
     //Un estudiante pertenecen a almenos un curso
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_curso")
     private Curso curso;
+
+    //constructor para registrar estudiante, teniendo en cuenta la relación con cursos
+    public Estudiante(Long id, Curso curso, String nombre, String email, LocalDateTime fecha){
+        this.id = id;
+        this.curso = curso;
+        this.nombre = nombre;
+        this.email = email;
+        this.fecha = fecha;
+    }
+
 
     public void desactivarEstudiante(){ this.activo = false; }
 

@@ -22,11 +22,12 @@ public class Curso {
     private String descripcion;
     private boolean activo;
 
+    //constructor para facilitar el registro de un nuevo curso a la base de datos
     public Curso(DatosRegistrarCurso datosRegistrarCurso) {
         this.nombre = datosRegistrarCurso.nombre();
         this.descripcion = datosRegistrarCurso.descripcion();
     }
-
+    //Metodo para actualizar cursos, incluyendo su estado activo o inactivo
     public void actualizarDatos(DatosActualizarCurso datosActualizarCurso) {
         if(datosActualizarCurso.nombre() != null){
             this.nombre = datosActualizarCurso.nombre();
@@ -38,6 +39,6 @@ public class Curso {
             this.activo = datosActualizarCurso.activo();
         }
     }
-
+    //Metodo para desactivar curso
     public void desactivarCurso(){ this.activo = false; }
 }
