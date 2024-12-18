@@ -40,5 +40,8 @@ public class Curso {
         }
     }
     //Metodo para desactivar curso
-    public void desactivarCurso(){ this.activo = false; }
+    public void desactivarCurso(){
+        this.activo = false;
+
+    }
 }

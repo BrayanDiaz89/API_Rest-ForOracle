@@ -41,6 +41,9 @@ public class Estudiante {
     }
 
 
-    public void desactivarEstudiante(){ this.activo = false; }
+    public void desactivarEstudiante(){
+        this.activo = false;
+        this.curso = null;
+    }
 
 }
