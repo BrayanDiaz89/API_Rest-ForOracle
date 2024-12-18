@@ -1,8 +1,5 @@
 package alura.fororacle.api_fororacle.controllers;
 
-import alura.fororacle.api_fororacle.domain.estudiante.DatosListadoEstudiantes;
-import alura.fororacle.api_fororacle.domain.estudiante.DatosRegistrarEstudiante;
-import alura.fororacle.api_fororacle.domain.estudiante.DatosRespuestaEstudiante;
 import alura.fororacle.api_fororacle.domain.instructor.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
