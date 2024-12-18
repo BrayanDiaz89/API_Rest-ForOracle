@@ -4,9 +4,9 @@ public record DatosListadoCursos(
                     Long id,
                     String nombre,
                     String descripcion,
-                    boolean activo
+                    Boolean activo
         ) {
         public DatosListadoCursos(Curso curso){
-                this(curso.getId(),curso.getNombre(), curso.getDescripcion(),curso.isActivo());
+                this(curso.getId(),curso.getNombre(), curso.getDescripcion(),curso.getActivo());
         }
 }

@@ -27,7 +27,7 @@ public class CursoController {
         //Guardar en tú base de datos el nuevo curso enviado en la request.
         Curso curso = cursoRepository.save(new Curso(datosRegistrarCurso));
         //Retornar 201 created, además de retornar el curso creado.
-        DatosRespuestaCurso datosRespuestaCurso = new DatosRespuestaCurso(curso.getId(), curso.getNombre(), curso.getDescripcion(),curso.isActivo());
+        DatosRespuestaCurso datosRespuestaCurso = new DatosRespuestaCurso(curso.getId(), curso.getNombre(), curso.getDescripcion(),curso.getActivo());
         URI url = uriComponentsBuilder.path("/cursos/{id}").buildAndExpand(curso.getId()).toUri();
         return ResponseEntity.created(url).body(datosRespuestaCurso);
     }
@@ -49,7 +49,7 @@ public class CursoController {
     public ResponseEntity<DatosRespuestaCurso> actualizarCurso(@RequestBody @Valid DatosActualizarCurso datosActualizarCurso){
         Curso curso = cursoRepository.getReferenceById(datosActualizarCurso.id());
         curso.actualizarDatos(datosActualizarCurso);
-        return ResponseEntity.ok(new DatosRespuestaCurso(curso.getId(),curso.getNombre(),curso.getDescripcion(), curso.isActivo()));
+        return ResponseEntity.ok(new DatosRespuestaCurso(curso.getId(),curso.getNombre(),curso.getDescripcion(), curso.getActivo()));
     }
 
     @DeleteMapping("/{id}")

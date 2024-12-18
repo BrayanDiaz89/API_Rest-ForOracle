@@ -42,7 +42,8 @@ public class EstudianteController {
     public ResponseEntity<DatosRespuestaEstudiante> actualizarEstudiante(@RequestBody @Valid DatosActualizarEstudiante datosActualizarEstudiante){
         Estudiante estudiante = estudianteRepository.getReferenceById(datosActualizarEstudiante.id());
         estudiante.actualizarDatos(datosActualizarEstudiante);
-        return ResponseEntity.ok(new DatosRespuestaEstudiante(estudiante.getId(), estudiante.getNombre(), estudiante.getEmail(), estudiante.getFecha(), estudiante.isActivo(), estudiante.getCurso().getId()));
+        return ResponseEntity.ok(new DatosRespuestaEstudiante(estudiante.getId(), estudiante.getNombre(),
+                estudiante.getEmail(), estudiante.getFecha(), estudiante.getActivo(), estudiante.getCurso().getId()));
     }
 
     @DeleteMapping("/{id}")

@@ -2,6 +2,7 @@ package alura.fororacle.api_fororacle.domain.instructor;
 
 import alura.fororacle.api_fororacle.domain.cursos.Curso;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -23,7 +24,7 @@ public class Instructor {
     private String nombre;
     private String email;
     private LocalDateTime fecha;
-    private boolean activo;
+    private boolean activo = true;
 
     //Creación de relación uno a muchos con Cursos, campo id_curso
     //Un instructor pertenece a almenos un curso
@@ -31,6 +32,26 @@ public class Instructor {
     @JoinColumn(name="id_curso")
     private Curso curso;
 
+    //constructor para registrar instructor, teniendo en cuenta la relación con cursos
+    public Instructor(Long id, Curso curso, String nombre, String email, LocalDateTime fecha){
+        this.id = id;
+        this.curso = curso;
+        this.nombre = nombre;
+        this.email = email;
+        this.fecha = fecha;
+    }
+
     public void desactivarInstructor() { this.activo = false; }
 
+    public void actualizarDatos(DatosActualizarInstructor datosActualizarInstructor) {
+        if(datosActualizarInstructor.nombre() != null){
+            this.nombre = datosActualizarInstructor.nombre();
+        }
+        if(datosActualizarInstructor.email() != null){
+            this.email = datosActualizarInstructor.email();
+        }
+        if(datosActualizarInstructor.activo() != activo){
+            this.activo = datosActualizarInstructor.activo();
+        }
+    }
 }

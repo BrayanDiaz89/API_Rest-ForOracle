@@ -24,7 +24,8 @@ public class RegistroDeEstudiantes {
         }
         var fecha = LocalDateTime.now();
         var curso = cursoRepository.findById(datos.idCurso()).get();
-        var registro = new Estudiante(null, curso, datos.nombre(), datos.email(), fecha);
+        var activo = true;
+        var registro = new Estudiante(null, curso, datos.nombre(), datos.email(), fecha, activo);
 
         estudianteRepository.save(registro);
         return new DatosRespuestaEstudiante(registro);

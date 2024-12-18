@@ -24,7 +24,7 @@ public class Estudiante {
     private String nombre;
     private String email;
     private LocalDateTime fecha;
-    private boolean activo = true;
+    private Boolean activo;
 
     //Creación de relación uno a muchos con Cursos, campo id_curso
     //Un estudiante pertenecen a almenos un curso
@@ -33,12 +33,13 @@ public class Estudiante {
     private Curso curso;
 
     //constructor para registrar estudiante, teniendo en cuenta la relación con cursos
-    public Estudiante(Long id, Curso curso, String nombre, String email, LocalDateTime fecha){
+    public Estudiante(Long id, Curso curso, String nombre, String email, LocalDateTime fecha, Boolean activo){
         this.id = id;
         this.curso = curso;
         this.nombre = nombre;
         this.email = email;
         this.fecha = fecha;
+        this.activo = activo;
     }
 
     public void desactivarEstudiante(){
@@ -53,7 +54,7 @@ public class Estudiante {
         if(datos.email() != null) {
             this.email = datos.email();
         }
-        if(datos.activo() != activo){
+        if(datos.activo() != null){
             this.activo = datos.activo();
         }
     }

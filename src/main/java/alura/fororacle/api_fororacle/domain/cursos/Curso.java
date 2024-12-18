@@ -20,12 +20,18 @@ public class Curso {
     private Long id;
     private String nombre;
     private String descripcion;
-    private boolean activo;
+    private Boolean activo;
 
     //constructor para facilitar el registro de un nuevo curso a la base de datos
     public Curso(DatosRegistrarCurso datosRegistrarCurso) {
         this.nombre = datosRegistrarCurso.nombre();
         this.descripcion = datosRegistrarCurso.descripcion();
+        if(datosRegistrarCurso.activo() == null || datosRegistrarCurso.activo()){
+            this.activo = true;
+        } else {
+            //quiero que sea true, en todos los casos, no es posible crear un estudiante inactivo.
+            this.activo = true;
+        }
     }
     //Metodo para actualizar cursos, incluyendo su estado activo o inactivo
     public void actualizarDatos(DatosActualizarCurso datosActualizarCurso) {
@@ -35,13 +41,15 @@ public class Curso {
         if(datosActualizarCurso.descripcion() != null) {
             this.descripcion = datosActualizarCurso.descripcion();
         }
-        if(datosActualizarCurso.activo() != activo){
+        //Asegurar que una vez se actualice un curso y no se manipule su activacion, automaticamente se asigne activado.
+        if(datosActualizarCurso.activo() == null){
+            this.activo = true;
+        } else {
             this.activo = datosActualizarCurso.activo();
         }
     }
     //Metodo para desactivar curso
-    public void desactivarCurso(){
+    public void desactivarCurso() {
         this.activo = false;
-
     }
 }

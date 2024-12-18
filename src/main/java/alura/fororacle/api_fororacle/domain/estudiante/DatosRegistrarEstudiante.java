@@ -18,6 +18,7 @@ public record DatosRegistrarEstudiante(
                                     String email,
                                     @Future
                                     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-                                    LocalDateTime fecha
+                                    LocalDateTime fecha,
+                                    Boolean active
                                     ) {
 }

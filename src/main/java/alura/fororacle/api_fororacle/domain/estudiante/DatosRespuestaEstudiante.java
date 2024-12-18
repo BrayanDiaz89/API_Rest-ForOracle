@@ -7,10 +7,10 @@ public record DatosRespuestaEstudiante(
                                     String nombre,
                                     String email,
                                     LocalDateTime fecha,
-                                    boolean activo,
+                                    Boolean activo,
                                     Long idCurso
 ) {
     public DatosRespuestaEstudiante(Estudiante estudiante) {
-        this(estudiante.getId(), estudiante.getNombre(), estudiante.getEmail(), estudiante.getFecha(),estudiante.isActivo(),estudiante.getCurso().getId());
+        this(estudiante.getId(), estudiante.getNombre(), estudiante.getEmail(), estudiante.getFecha(),estudiante.getActivo(),estudiante.getCurso().getId());
     }
 }

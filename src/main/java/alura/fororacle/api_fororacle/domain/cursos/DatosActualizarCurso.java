@@ -8,5 +8,5 @@ public record DatosActualizarCurso(
                                    Long id,
                                    String nombre,
                                    String descripcion,
-                                   boolean activo) {
+                                   Boolean activo) {
 }

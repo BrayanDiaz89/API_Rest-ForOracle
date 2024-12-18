@@ -6,6 +6,7 @@ public record DatosRegistrarCurso(
                     @NotBlank(message = "El nombre no puede estar vacío.")
                     String nombre,
                     @NotBlank(message = "Debe dar una descripción del curso.")
-                    String descripcion
+                    String descripcion,
+                    Boolean activo
             ) {
 }
