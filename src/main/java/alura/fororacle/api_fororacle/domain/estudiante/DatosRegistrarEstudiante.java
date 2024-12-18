@@ -19,6 +19,6 @@ public record DatosRegistrarEstudiante(
                                     @Future
                                     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
                                     LocalDateTime fecha,
-                                    Boolean active
+                                    Boolean activo
                                     ) {
 }

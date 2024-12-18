@@ -39,7 +39,9 @@ public class Instructor {
         this.nombre = nombre;
         this.email = email;
         this.fecha = fecha;
-        this.activo = activo;
+        if(activo == null){
+            this.activo = true;
+        }
     }
 
     public void desactivarInstructor() { this.activo = false; }

@@ -26,8 +26,7 @@ public class RegistroDeInstructores {
         }
         var fecha = LocalDateTime.now();
         var curso = cursoRepository.findById(datosRegistro.idCurso()).get();
-        var activo = true;
-        var registro = new Instructor(null, curso, datosRegistro.nombre(), datosRegistro.email(), fecha, activo);
+        var registro = new Instructor(null, curso, datosRegistro.nombre(), datosRegistro.email(), fecha, null);
 
         instructorRepository.save(registro);
         return new DatosRespuestaInstructor(registro);

@@ -33,13 +33,15 @@ public class Estudiante {
     private Curso curso;
 
     //constructor para registrar estudiante, teniendo en cuenta la relación con cursos
-    public Estudiante(Long id, Curso curso, String nombre, String email, LocalDateTime fecha, Boolean activo){
+    public Estudiante(Long id, Curso curso, String nombre, String email, LocalDateTime fecha, Boolean activo) {
         this.id = id;
         this.curso = curso;
         this.nombre = nombre;
         this.email = email;
         this.fecha = fecha;
-        this.activo = activo;
+        if (activo == null) {
+            this.activo = true;
+        }
     }
 
     public void desactivarEstudiante(){
