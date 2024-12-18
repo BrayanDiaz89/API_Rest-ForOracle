@@ -44,7 +44,15 @@ public class InstructorController {
         Instructor instructor = instructorRepository.getReferenceById(datosActualizarInstructor.id());
         instructor.actualizarDatos(datosActualizarInstructor);
         return ResponseEntity.ok(new DatosRespuestaInstructor(instructor.getId(),instructor.getNombre(),
-                instructor.getEmail(),instructor.getFecha(),instructor.isActivo(),instructor.getCurso().getId()));
+                instructor.getEmail(),instructor.getFecha(),instructor.getActivo(),instructor.getCurso().getId()));
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity eliminarInstructor(@PathVariable Long id){
+        Instructor instructor = instructorRepository.getReferenceById(id);
+        instructor.desactivarInstructor();
+        return ResponseEntity.noContent().build();
     }
 
 }

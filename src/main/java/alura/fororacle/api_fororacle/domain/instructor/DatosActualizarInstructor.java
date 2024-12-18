@@ -6,5 +6,5 @@ public record DatosActualizarInstructor(@NotNull
                                         Long id,
                                         String nombre,
                                         String email,
-                                        boolean activo) {
+                                        Boolean activo) {
 }
