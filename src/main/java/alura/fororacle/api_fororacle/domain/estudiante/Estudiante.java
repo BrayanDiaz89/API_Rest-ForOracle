@@ -1,6 +1,7 @@
 package alura.fororacle.api_fororacle.domain.estudiante;
 
 import alura.fororacle.api_fororacle.domain.cursos.Curso;
+import alura.fororacle.api_fororacle.domain.cursos.DatosActualizarCurso;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -40,10 +41,20 @@ public class Estudiante {
         this.fecha = fecha;
     }
 
-
     public void desactivarEstudiante(){
         this.activo = false;
-        this.curso = null;
     }
 
+    //Metodo para actualizar cursos, incluyendo su estado activo o inactivo
+    public void actualizarDatos(DatosActualizarEstudiante datos) {
+        if(datos.nombre() != null){
+            this.nombre = datos.nombre();
+        }
+        if(datos.email() != null) {
+            this.email = datos.email();
+        }
+        if(datos.activo() != activo){
+            this.activo = datos.activo();
+        }
+    }
 }

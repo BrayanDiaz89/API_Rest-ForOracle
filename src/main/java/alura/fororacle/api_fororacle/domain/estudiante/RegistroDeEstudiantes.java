@@ -2,6 +2,7 @@ package alura.fororacle.api_fororacle.domain.estudiante;
 
 import alura.fororacle.api_fororacle.domain.cursos.CursoRepository;
 import alura.fororacle.api_fororacle.infra.errores.ValidacionException;
+import jakarta.validation.Valid;
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,4 +29,5 @@ public class RegistroDeEstudiantes {
         estudianteRepository.save(registro);
         return new DatosRespuestaEstudiante(registro);
     }
+
 }
