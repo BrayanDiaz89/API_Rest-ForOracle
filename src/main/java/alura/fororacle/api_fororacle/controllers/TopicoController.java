@@ -1,11 +1,12 @@
 package alura.fororacle.api_fororacle.controllers;
 
-import alura.fororacle.api_fororacle.domain.topicos.DatosRegistrarTopico;
-import alura.fororacle.api_fororacle.domain.topicos.DatosRespuestaCreacionTopico;
-import alura.fororacle.api_fororacle.domain.topicos.RegistroDeTopicos;
-import alura.fororacle.api_fororacle.domain.topicos.TopicoRepository;
+import alura.fororacle.api_fororacle.domain.topicos.*;
 import jakarta.validation.Valid;
+import org.hibernate.engine.jdbc.Size;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,4 +25,15 @@ public class TopicoController {
         var detalleRegistroTopico = registro.crearTopico(datosRegistrarTopico);
         return ResponseEntity.ok(detalleRegistroTopico);
     }
+
+    @GetMapping
+    public ResponseEntity<Page<DatosListadoTopicos>> listadoDeTopicosSinResolver(@PageableDefault(size = 5) Pageable paginacion) {
+       return ResponseEntity.ok(repository.findByNoResueltoTrue(paginacion).map(DatosListadoTopicos::new));
+    }
+
+    @GetMapping("/resueltos")
+    public ResponseEntity<Page<DatosListadoTopicos>> listadoDeTopicosResueltos(@PageableDefault(size = 5) Pageable paginacion) {
+        return ResponseEntity.ok(repository.findByNoResueltoFalse(paginacion).map(DatosListadoTopicos::new));
+    }
+
 }
