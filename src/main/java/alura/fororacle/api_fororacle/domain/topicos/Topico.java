@@ -3,6 +3,7 @@ package alura.fororacle.api_fororacle.domain.topicos;
 import alura.fororacle.api_fororacle.domain.cursos.Curso;
 import alura.fororacle.api_fororacle.domain.estudiante.Estudiante;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,7 +25,7 @@ public class Topico {
     private String titulo;
     private String descripcion;
     private LocalDateTime fecha;
-    private boolean noResuelto;
+    private Boolean no_resuelto;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_curso")
@@ -34,7 +35,19 @@ public class Topico {
     @JoinColumn(name = "id_estudiante")
     private Estudiante estudiante;
 
-    public void marcarComoResueltoElTopico(){ this.noResuelto = false; }
+    //constructor para registrar topicos, teniendo en cuenta la relaciones con cursos y estudiantes
+    public Topico(Long id, Curso curso, Estudiante estudiante, String titulo, String descripcion, LocalDateTime fecha, Boolean no_resuelto){
+        this.id = id;
+        this.curso = curso;
+        this.estudiante = estudiante;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        if(no_resuelto == null){
+            this.no_resuelto = true;
+        }
+    }
 
+    public void marcarComoResueltoElTopico(){ this.no_resuelto = false; }
 
 }
