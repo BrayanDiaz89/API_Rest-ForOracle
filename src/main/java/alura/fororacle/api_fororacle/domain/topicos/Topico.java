@@ -2,6 +2,7 @@ package alura.fororacle.api_fororacle.domain.topicos;
 
 import alura.fororacle.api_fororacle.domain.cursos.Curso;
 import alura.fororacle.api_fororacle.domain.estudiante.Estudiante;
+import alura.fororacle.api_fororacle.domain.instructor.DatosActualizarInstructor;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -10,6 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Table(name = "topicos")
 @Entity(name = "Topico")
@@ -48,6 +50,33 @@ public class Topico {
         }
     }
 
-    public void marcarComoResueltoElTopico(){ this.no_resuelto = false; }
+    //Constructor para actualizar tópico
+    public Topico(Long id, Estudiante estudiante, String titulo, String descripcion, LocalDateTime fecha, Boolean no_resuelto){
+        this.id = id;
+        this.estudiante = estudiante;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        if(no_resuelto == null){
+            this.no_resuelto = true;
+        }
+    }
 
+    public void actualizarDatos(DatosActualizarTopico datosActualizarTopico) {
+        if(datosActualizarTopico.titulo() != null){
+            this.titulo = datosActualizarTopico.titulo();
+        }
+        if(datosActualizarTopico.descripcion() != null){
+            this.descripcion = datosActualizarTopico.descripcion();
+        }
+        if(datosActualizarTopico.fecha() == null){
+            this.fecha = LocalDateTime.now();
+        }
+        if(datosActualizarTopico.no_resuelto() != null){
+            this.no_resuelto = datosActualizarTopico.no_resuelto();
+        }
+    }
+
+    public void marcarComoResueltoElTopico(){ this.no_resuelto = false; }
 }
+

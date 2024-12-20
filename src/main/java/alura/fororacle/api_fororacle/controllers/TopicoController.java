@@ -1,8 +1,8 @@
 package alura.fororacle.api_fororacle.controllers;
 
 import alura.fororacle.api_fororacle.domain.topicos.*;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import org.hibernate.engine.jdbc.Size;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -34,6 +34,13 @@ public class TopicoController {
     @GetMapping("/resueltos")
     public ResponseEntity<Page<DatosListadoTopicos>> listadoDeTopicosResueltos(@PageableDefault(size = 5) Pageable paginacion) {
         return ResponseEntity.ok(repository.findByNoResueltoFalse(paginacion).map(DatosListadoTopicos::new));
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity<DatosRespuestaTopico> actualizarTopico(@RequestBody @Valid DatosActualizarTopico datosActualizarTopico) {
+        var detallesActualizacionTopico = registro.actualizarTopico(datosActualizarTopico);
+        return ResponseEntity.ok(detallesActualizacionTopico);
     }
 
 }

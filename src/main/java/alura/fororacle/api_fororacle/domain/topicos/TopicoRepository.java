@@ -5,8 +5,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.Optional;
-
 public interface TopicoRepository extends JpaRepository<Topico, Long> {
 
     @Query("""
@@ -22,4 +20,21 @@ public interface TopicoRepository extends JpaRepository<Topico, Long> {
            t.no_resuelto = false
            """)
     Page<Topico> findByNoResueltoFalse(Pageable paginacion);
+
+
+    @Query("""
+       select count(t) > 0
+       from Topico t
+       where t.id = :idTopico
+       and t.estudiante.id = :idEstudiante
+       """)
+    boolean findByTopicoIfEstudianteCreoElTopico(Long idTopico, Long idEstudiante);
+
+    @Query("""
+           select t.no_resuelto
+           from Topico t
+           where
+           t.id = :idTopico
+           """)
+    boolean findByActivoTrue(Long idTopico);
 }

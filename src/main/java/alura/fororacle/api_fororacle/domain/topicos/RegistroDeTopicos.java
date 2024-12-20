@@ -1,7 +1,9 @@
 package alura.fororacle.api_fororacle.domain.topicos;
 
+import alura.fororacle.api_fororacle.domain.cursos.Curso;
 import alura.fororacle.api_fororacle.domain.cursos.CursoRepository;
 import alura.fororacle.api_fororacle.domain.estudiante.EstudianteRepository;
+import alura.fororacle.api_fororacle.domain.topicos.validaciones.actualizacion.ValidadorDeActualizacionTopicos;
 import alura.fororacle.api_fororacle.domain.topicos.validaciones.creacion.ValidadorDeTopicos;
 import alura.fororacle.api_fororacle.infra.errores.ValidacionException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +27,14 @@ public class RegistroDeTopicos {
     @Autowired
     private List<ValidadorDeTopicos> validadores;
 
+    @Autowired
+    private List<ValidadorDeActualizacionTopicos> validadoresActualizar;
+
     public DatosRespuestaCreacionTopico crearTopico(DatosRegistrarTopico datosRegistrarTopico){
         if(!cursoRepository.existsById(datosRegistrarTopico.idCurso())){
             throw new ValidacionException("El curso al que hace referencia no fue encontrado, valide el id, por favor.");
         }
-        if(!cursoRepository.existsById(datosRegistrarTopico.idEstudiante())){
+        if(!estudianteRepository.existsById(datosRegistrarTopico.idEstudiante())){
             throw new ValidacionException("El estudiante al que hace referencia no fue encontrado, valide el id, por favor.");
         }
 
@@ -44,5 +49,28 @@ public class RegistroDeTopicos {
 
         topicoRepository.save(registro);
         return new DatosRespuestaCreacionTopico(registro);
+    }
+
+    public DatosRespuestaTopico actualizarTopico(DatosActualizarTopico datosActualizarTopico){
+        if(!cursoRepository.existsById(datosActualizarTopico.idTopico())){
+            throw new ValidacionException("El curso al que hace referencia no fue encontrado, valide el id, por favor.");
+        }
+        if(!estudianteRepository.existsById(datosActualizarTopico.idEstudiante())){
+            throw new ValidacionException("El estudiante al que hace referencia no fue encontrado, valide el id, por favor.");
+        }
+
+        //validadores
+        validadoresActualizar.forEach(v-> v.validar(datosActualizarTopico));
+
+        //proceso despues de validar
+        var fecha = LocalDateTime.now();
+        var estudiante = estudianteRepository.findById(datosActualizarTopico.idEstudiante()).get();
+        var actualizacion = new Topico(null, estudiante, datosActualizarTopico.titulo(), datosActualizarTopico.descripcion(), fecha, datosActualizarTopico.no_resuelto());
+
+        Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.idTopico());
+        topico.actualizarDatos(datosActualizarTopico);
+
+        return new DatosRespuestaTopico(topico.getId(), topico.getTitulo(),topico.getDescripcion(),topico.getFecha(), topico.getEstudiante().getId(),
+                topico.getCurso().getId(),topico.getNo_resuelto());
     }
 }
