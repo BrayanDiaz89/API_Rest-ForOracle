@@ -48,6 +48,7 @@ public class InstructorController {
     @Transactional
     public ResponseEntity eliminarInstructor(@PathVariable Long id){
         Instructor instructor = instructorRepository.getReferenceById(id);
+
         instructor.desactivarInstructor();
         return ResponseEntity.noContent().build();
     }

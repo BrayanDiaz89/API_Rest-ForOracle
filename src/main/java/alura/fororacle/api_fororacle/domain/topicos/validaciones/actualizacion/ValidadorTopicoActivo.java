@@ -15,7 +15,7 @@ public class ValidadorTopicoActivo implements ValidadorDeActualizacionTopicos{
     public void validar(DatosActualizarTopico datos) {
         var topicoActivo = topicoRepository.findByActivoTrue(datos.idTopico());
         if(!topicoActivo) {
-            throw new ValidacionException("El tópico ingresado ya ha sido solucionado, por lo que no está activo para responder.");
+            throw new ValidacionException("El tópico ingresado ya ha sido solucionado, por lo que no está activo para actualizarse.");
         }
     }
 }

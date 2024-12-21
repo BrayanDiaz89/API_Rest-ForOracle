@@ -1,6 +1,5 @@
 package alura.fororacle.api_fororacle.domain.topicos;
 
-import alura.fororacle.api_fororacle.domain.cursos.Curso;
 import alura.fororacle.api_fororacle.domain.cursos.CursoRepository;
 import alura.fororacle.api_fororacle.domain.estudiante.EstudianteRepository;
 import alura.fororacle.api_fororacle.domain.topicos.validaciones.actualizacion.ValidadorDeActualizacionTopicos;
@@ -73,4 +72,14 @@ public class RegistroDeTopicos {
         return new DatosRespuestaTopico(topico.getId(), topico.getTitulo(),topico.getDescripcion(),topico.getFecha(), topico.getEstudiante().getId(),
                 topico.getCurso().getId(),topico.getNo_resuelto());
     }
+
+    public void eliminarTopico(Long id){
+        Topico topico = topicoRepository.getReferenceById(id);
+        var idTopico = topico.getId();
+        if(idTopico != null) {
+            topicoRepository.findByActivoTrue(idTopico);
+            topico.marcarComoResueltoElTopico();
+        }
+    }
+
 }
