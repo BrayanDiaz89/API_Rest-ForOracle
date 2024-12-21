@@ -36,5 +36,5 @@ public interface TopicoRepository extends JpaRepository<Topico, Long> {
            where
            t.id = :idTopico
            """)
-    boolean findByActivoTrue(Long idTopico);
+    Boolean findByActivoTrue(Long idTopico);
 }

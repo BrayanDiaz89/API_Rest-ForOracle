@@ -1,6 +1,7 @@
 package alura.fororacle.api_fororacle.controllers;
 
 import alura.fororacle.api_fororacle.domain.topicos.*;
+import alura.fororacle.api_fororacle.infra.errores.ValidacionException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,14 @@ public class TopicoController {
     @GetMapping("/resueltos")
     public ResponseEntity<Page<DatosListadoTopicos>> listadoDeTopicosResueltos(@PageableDefault(size = 5) Pageable paginacion) {
         return ResponseEntity.ok(repository.findByNoResueltoFalse(paginacion).map(DatosListadoTopicos::new));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<DatosRespuestaTopico> retornarDatosTopicoPorID(@PathVariable Long id) {
+        Topico topico = repository.getReferenceById(id);
+        var datosTopico = new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getDescripcion(), topico.getFecha(), topico.getEstudiante().getId(),
+                topico.getCurso().getId(), topico.getNo_resuelto());
+        return ResponseEntity.ok(datosTopico);
     }
 
     @PutMapping

@@ -74,12 +74,16 @@ public class RegistroDeTopicos {
     }
 
     public void eliminarTopico(Long id){
-        Topico topico = topicoRepository.getReferenceById(id);
-        var idTopico = topico.getId();
-        if(idTopico != null) {
-            topicoRepository.findByActivoTrue(idTopico);
-            topico.marcarComoResueltoElTopico();
+        if(!topicoRepository.existsById(id)) {
+            throw new ValidacionException("No existe un tópico con el id suministrado.");
         }
+        Topico topico = topicoRepository.getReferenceById(id);
+        var idTopico = topicoRepository.findByActivoTrue(topico.getId());
+        if(!idTopico){
+           throw new ValidacionException("El topico ya ha sido resuelto, y se encuentra inactivo. No es posible eliminarlo de la base de datos.");
+        }
+        //Marcamos como resuelto el topico, para que se posicione inactivo.
+        topico.marcarComoResueltoElTopico();
     }
 
 }
