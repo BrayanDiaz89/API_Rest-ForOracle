@@ -4,7 +4,6 @@ import alura.fororacle.api_fororacle.domain.estudiante.Estudiante;
 import alura.fororacle.api_fororacle.domain.instructor.Instructor;
 import alura.fororacle.api_fororacle.domain.topicos.Topico;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -37,5 +36,18 @@ public class Respuesta {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_topico")
     private Topico topico;
+
+    public void actualizarDatosRespuestaInstructor(DatosActualizarRespuestaInstructor datos){
+        this.contenido = datos.contenido();
+        if(datos.fecha() == null){
+            this.fecha = LocalDateTime.now();
+        }
+    }
+    public void actualizarDatosRespuestaEstudiante(DatosActualizarRespuestaEstudiante datos){
+        this.contenido = datos.contenido();
+        if(datos.fecha() == null){
+            this.fecha = LocalDateTime.now();
+        }
+    }
 
 }

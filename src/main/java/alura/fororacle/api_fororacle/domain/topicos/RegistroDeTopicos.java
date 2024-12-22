@@ -61,11 +61,6 @@ public class RegistroDeTopicos {
         //validadores
         validadoresActualizar.forEach(v-> v.validar(datosActualizarTopico));
 
-        //proceso despues de validar
-        var fecha = LocalDateTime.now();
-        var estudiante = estudianteRepository.findById(datosActualizarTopico.idEstudiante()).get();
-        var actualizacion = new Topico(null, estudiante, datosActualizarTopico.titulo(), datosActualizarTopico.descripcion(), fecha, datosActualizarTopico.no_resuelto());
-
         Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.idTopico());
         topico.actualizarDatos(datosActualizarTopico);
 

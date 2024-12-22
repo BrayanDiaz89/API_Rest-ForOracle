@@ -1,7 +1,45 @@
 package alura.fororacle.api_fororacle.domain.respuestas;
 
+import alura.fororacle.api_fororacle.domain.instructor.Instructor;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.Optional;
 
 public interface RespuestaRepository extends JpaRepository<Respuesta, Long> {
 
+    @Query("""
+           SELECT r 
+           FROM Respuesta r 
+           WHERE r.instructor.id IS NOT NULL
+            """)
+    Page<Respuesta> findByIdInstructorNotNull(Pageable paginacion);
+
+    @Query("""
+           SELECT r 
+           FROM Respuesta r 
+           WHERE r.estudiante.id IS NOT NULL
+            """)
+    Page<Respuesta> findByIdEstudianteNotNull(Pageable paginacion);
+
+    @Query("""
+            SELECT CASE WHEN COUNT(r) > 0 THEN true ELSE false END
+            FROM Respuesta r
+            WHERE r.instructor.id = :idInstructor
+            AND r.id = :idRespuesta
+            AND r.topico.id = :idTopico
+           """)
+    Boolean findByCoincidenciaIdInstructorAndIdRespuesta(Long idInstructor, Long idRespuesta, Long idTopico);
+
+    @Query("""
+            SELECT CASE WHEN COUNT(r) > 0 THEN true ELSE false END
+            FROM Respuesta r
+            WHERE r.estudiante.id = :idEstudiante
+            AND r.id = :idRespuesta
+            AND r.topico.id = :idTopico
+           """)
+    Boolean findByCoincidenciaIdEstudianteAndIdRespuesta(Long idEstudiante, Long idRespuesta, Long idTopico);
 }
