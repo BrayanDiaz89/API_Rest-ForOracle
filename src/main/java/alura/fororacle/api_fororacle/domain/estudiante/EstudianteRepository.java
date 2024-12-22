@@ -18,5 +18,5 @@ public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
            where
            e.id = :idEstudiante
            """)
-    boolean findByActivoById(Long idEstudiante);
+    Boolean findByActivoById(Long idEstudiante);
 }
