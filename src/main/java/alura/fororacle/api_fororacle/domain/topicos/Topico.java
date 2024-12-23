@@ -3,6 +3,7 @@ package alura.fororacle.api_fororacle.domain.topicos;
 import alura.fororacle.api_fororacle.domain.cursos.Curso;
 import alura.fororacle.api_fororacle.domain.estudiante.Estudiante;
 import alura.fororacle.api_fororacle.domain.instructor.DatosActualizarInstructor;
+import alura.fororacle.api_fororacle.domain.respuestas.Respuesta;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -11,6 +12,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Table(name = "topicos")
@@ -36,6 +38,9 @@ public class Topico {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_estudiante")
     private Estudiante estudiante;
+
+    @OneToMany(mappedBy = "topico", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Respuesta> respuestas;
 
     //constructor para registrar topicos, teniendo en cuenta la relaciones con cursos y estudiantes
     public Topico(Long id, Curso curso, Estudiante estudiante, String titulo, String descripcion, LocalDateTime fecha, Boolean no_resuelto){

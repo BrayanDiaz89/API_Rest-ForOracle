@@ -39,15 +39,17 @@ public class TopicoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<DatosRespuestaTopico> retornarDatosTopicoPorID(@PathVariable Long id) {
-        Topico topico = repository.getReferenceById(id);
-        var datosTopico = new DatosRespuestaTopico(topico.getId(), topico.getTitulo(), topico.getDescripcion(), topico.getFecha(), topico.getEstudiante().getId(),
-                topico.getCurso().getId(), topico.getNo_resuelto());
+        Topico topico = repository.findTopicoWithRespuestas(id);
+        if(topico == null){
+            throw new ValidacionException("El topico no existe o ya ha sido resuelto.");
+        }
+        var datosTopico = new DatosRespuestaTopico(topico);
         return ResponseEntity.ok(datosTopico);
     }
 
     @PutMapping
     @Transactional
-    public ResponseEntity<DatosRespuestaTopico> actualizarTopico(@RequestBody @Valid DatosActualizarTopico datosActualizarTopico) {
+    public ResponseEntity<DatosRespuestaTopicoSinRespuestas> actualizarTopico(@RequestBody @Valid DatosActualizarTopico datosActualizarTopico) {
         var detallesActualizacionTopico = registro.actualizarTopico(datosActualizarTopico);
         return ResponseEntity.ok(detallesActualizacionTopico);
     }

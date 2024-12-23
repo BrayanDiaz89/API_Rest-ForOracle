@@ -50,7 +50,7 @@ public class RegistroDeTopicos {
         return new DatosRespuestaCreacionTopico(registro);
     }
 
-    public DatosRespuestaTopico actualizarTopico(DatosActualizarTopico datosActualizarTopico){
+    public DatosRespuestaTopicoSinRespuestas actualizarTopico(DatosActualizarTopico datosActualizarTopico){
         if(!cursoRepository.existsById(datosActualizarTopico.idTopico())){
             throw new ValidacionException("El curso al que hace referencia no fue encontrado, valide el id, por favor.");
         }
@@ -64,7 +64,7 @@ public class RegistroDeTopicos {
         Topico topico = topicoRepository.getReferenceById(datosActualizarTopico.idTopico());
         topico.actualizarDatos(datosActualizarTopico);
 
-        return new DatosRespuestaTopico(topico.getId(), topico.getTitulo(),topico.getDescripcion(),topico.getFecha(), topico.getEstudiante().getId(),
+        return new DatosRespuestaTopicoSinRespuestas(topico.getId(), topico.getTitulo(),topico.getDescripcion(),topico.getFecha(), topico.getEstudiante().getId(),
                 topico.getCurso().getId(),topico.getNo_resuelto());
     }
 
