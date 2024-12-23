@@ -2,6 +2,8 @@ package alura.fororacle.api_fororacle.domain.respuestas;
 
 import alura.fororacle.api_fororacle.domain.estudiante.Estudiante;
 import alura.fororacle.api_fororacle.domain.instructor.Instructor;
+import alura.fororacle.api_fororacle.domain.respuestas.estudiante.DatosActualizarRespuestaEstudiante;
+import alura.fororacle.api_fororacle.domain.respuestas.instructor.DatosActualizarRespuestaInstructor;
 import alura.fororacle.api_fororacle.domain.topicos.Topico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,6 +26,7 @@ public class Respuesta {
     private Long id;
     private String contenido;
     private LocalDateTime fecha;
+    private Boolean activo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_estudiante")
@@ -49,5 +52,6 @@ public class Respuesta {
             this.fecha = LocalDateTime.now();
         }
     }
+    public void eliminarRespuesta() { this.activo = false; }
 
 }

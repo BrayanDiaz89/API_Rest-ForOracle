@@ -1,4 +1,4 @@
-package alura.fororacle.api_fororacle.domain.respuestas;
+package alura.fororacle.api_fororacle.domain.respuestas.estudiante;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.Future;

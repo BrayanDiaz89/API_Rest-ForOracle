@@ -1,4 +1,6 @@
-package alura.fororacle.api_fororacle.domain.respuestas;
+package alura.fororacle.api_fororacle.domain.respuestas.estudiante;
+
+import alura.fororacle.api_fororacle.domain.respuestas.Respuesta;
 
 import java.time.LocalDateTime;
 

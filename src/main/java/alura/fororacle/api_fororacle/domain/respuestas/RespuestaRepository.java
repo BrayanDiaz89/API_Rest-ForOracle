@@ -15,15 +15,17 @@ public interface RespuestaRepository extends JpaRepository<Respuesta, Long> {
            SELECT r 
            FROM Respuesta r 
            WHERE r.instructor.id IS NOT NULL
+           AND r.activo = true
             """)
-    Page<Respuesta> findByIdInstructorNotNull(Pageable paginacion);
+    Page<Respuesta> findByIdInstructorNotNullAndRespuestaActiva(Pageable paginacion);
 
     @Query("""
            SELECT r 
            FROM Respuesta r 
            WHERE r.estudiante.id IS NOT NULL
+           AND r.activo = true
             """)
-    Page<Respuesta> findByIdEstudianteNotNull(Pageable paginacion);
+    Page<Respuesta> findByIdEstudianteNotNullAndRespuestaActiva(Pageable paginacion);
 
     @Query("""
             SELECT CASE WHEN COUNT(r) > 0 THEN true ELSE false END
@@ -42,4 +44,12 @@ public interface RespuestaRepository extends JpaRepository<Respuesta, Long> {
             AND r.topico.id = :idTopico
            """)
     Boolean findByCoincidenciaIdEstudianteAndIdRespuesta(Long idEstudiante, Long idRespuesta, Long idTopico);
+
+    @Query("""
+           select r.activo
+           from Respuesta r
+           where
+           r.id = :idRespuesta
+           """)
+    boolean findByActivoTrueAndIsIdRespuesta(Long idRespuesta);
 }
