@@ -1,7 +1,6 @@
 package alura.fororacle.api_fororacle.controllers;
 
 import alura.fororacle.api_fororacle.domain.topicos.*;
-import alura.fororacle.api_fororacle.infra.errores.ValidacionException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
