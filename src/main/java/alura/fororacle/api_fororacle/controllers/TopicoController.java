@@ -39,10 +39,7 @@ public class TopicoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<DatosRespuestaTopico> retornarDatosTopicoPorID(@PathVariable Long id) {
-        Topico topico = repository.findTopicoWithRespuestas(id);
-        if(topico == null){
-            throw new ValidacionException("El topico no existe o ya ha sido resuelto.");
-        }
+        Topico topico = repository.getReferenceById(id);
         var datosTopico = new DatosRespuestaTopico(topico);
         return ResponseEntity.ok(datosTopico);
     }

@@ -39,12 +39,4 @@ public interface TopicoRepository extends JpaRepository<Topico, Long> {
            t.id = :idTopico
            """)
     Boolean findByActivoTrue(Long idTopico);
-
-    @Query("""
-           SELECT t 
-           FROM Topico t
-           JOIN FETCH t.respuestas r
-           WHERE t.id = :idTopico
-           """)
-    Topico findTopicoWithRespuestas(Long idTopico);
 }
