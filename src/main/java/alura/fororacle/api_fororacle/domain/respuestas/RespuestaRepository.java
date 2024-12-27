@@ -9,7 +9,8 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
-public interface RespuestaRepository extends JpaRepository<Respuesta, Long> {
+public interface
+RespuestaRepository extends JpaRepository<Respuesta, Long> {
 
     @Query("""
            SELECT r 

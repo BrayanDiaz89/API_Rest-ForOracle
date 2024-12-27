@@ -44,6 +44,15 @@ public class Instructor {
         }
     }
 
+    //Constructor para test
+    public Instructor(Curso curso, String nombre, String email, LocalDateTime fecha, Boolean activo) {
+        this.curso = curso;
+        this.nombre = nombre;
+        this.email = email;
+        this.fecha = fecha;
+        this.activo = activo;
+    }
+
     public void desactivarInstructor() { this.activo = false; }
 
     public void actualizarDatos(DatosActualizarInstructor datosActualizarInstructor) {
