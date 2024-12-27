@@ -32,11 +32,14 @@ class TopicoRepositoryTest {
     @Test
     @DisplayName("Debería devolver true, si el topico fue creado por el id del estudiante que se ingresa en la consulta.")
     void findByTopicoIfEstudianteCreoElTopicoEscenario1() {
+        //given o arrange
         var fecha = LocalDateTime.now();
         var curso = registrarCurso("python", "aprende python", true);
         var estudiante = registrarEstudiante(curso, "Brayan", "brayan@gmail.com",fecha, true);
         var topico = registrarTopico(curso, estudiante, "Dudas en python", "no se como usarlo",fecha, true);
+        //when o act
         var estudianteEsAutor = topicoRepository.findByTopicoIfEstudianteCreoElTopico(topico.getId(), estudiante.getId());
+        //then o assert
         assertThat(estudianteEsAutor).isTrue();
     }
 
