@@ -44,6 +44,15 @@ public class Estudiante {
         }
     }
 
+    //Constructor para test
+    public Estudiante(Curso curso, String nombre, String email, LocalDateTime fecha, Boolean activo) {
+        this.curso = curso;
+        this.nombre = nombre;
+        this. email = email;
+        this.fecha = fecha;
+        this.activo = activo;
+    }
+
     public void desactivarEstudiante(){
         this.activo = false;
     }

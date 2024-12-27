@@ -66,6 +66,15 @@ public class Topico {
             this.no_resuelto = true;
         }
     }
+    //Crear constructor para test
+    public Topico(Curso curso, Estudiante estudiante, String titulo, String descripcion, LocalDateTime fecha, Boolean noResuelto) {
+        this.curso = curso;
+        this.estudiante = estudiante;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.no_resuelto = noResuelto;
+    }
 
     public void actualizarDatos(DatosActualizarTopico datosActualizarTopico) {
         if(datosActualizarTopico.titulo() != null){

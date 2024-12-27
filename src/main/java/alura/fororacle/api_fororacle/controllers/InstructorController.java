@@ -1,6 +1,7 @@
 package alura.fororacle.api_fororacle.controllers;
 
 import alura.fororacle.api_fororacle.domain.instructor.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/instructores")
+@SecurityRequirement(name = "bearer-key")
 public class InstructorController {
 
     @Autowired

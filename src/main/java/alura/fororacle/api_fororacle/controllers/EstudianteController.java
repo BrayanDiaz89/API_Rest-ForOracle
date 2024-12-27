@@ -2,6 +2,7 @@ package alura.fororacle.api_fororacle.controllers;
 
 import alura.fororacle.api_fororacle.domain.cursos.DatosListadoCursos;
 import alura.fororacle.api_fororacle.domain.estudiante.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/estudiantes")
+@SecurityRequirement(name = "bearer-key")
 public class EstudianteController {
 
     @Autowired

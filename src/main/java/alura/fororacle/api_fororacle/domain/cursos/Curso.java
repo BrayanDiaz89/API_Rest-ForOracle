@@ -33,6 +33,14 @@ public class Curso {
             this.activo = true;
         }
     }
+
+    //Constructor para tester
+    public Curso(String nombre, String descripcion, Boolean activo) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.activo = activo;
+    }
+
     //Metodo para actualizar cursos, incluyendo su estado activo o inactivo
     public void actualizarDatos(DatosActualizarCurso datosActualizarCurso) {
         if(datosActualizarCurso.nombre() != null){

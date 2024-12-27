@@ -10,6 +10,7 @@ import alura.fororacle.api_fororacle.domain.respuestas.instructor.DatosListadoRe
 import alura.fororacle.api_fororacle.domain.respuestas.instructor.DatosVisualizarRespuestaInstructor;
 import alura.fororacle.api_fororacle.domain.respuestas.instructor.RegistroDeRespuestasInstructor;
 import alura.fororacle.api_fororacle.domain.topicos.TopicoRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/respuestas")
+@SecurityRequirement(name = "bearer-key")
 public class RespuestaController {
 
     @Autowired

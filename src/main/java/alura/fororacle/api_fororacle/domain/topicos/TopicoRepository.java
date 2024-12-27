@@ -25,10 +25,10 @@ public interface TopicoRepository extends JpaRepository<Topico, Long> {
 
 
     @Query("""
-       select count(t) > 0
-       from Topico t
-       where t.id = :idTopico
-       and t.estudiante.id = :idEstudiante
+            select count(t) > 0
+            from Topico t
+            where t.id = :idTopico
+            and t.estudiante.id = :idEstudiante
        """)
     boolean findByTopicoIfEstudianteCreoElTopico(Long idTopico, Long idEstudiante);
 
