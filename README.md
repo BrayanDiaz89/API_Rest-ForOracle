@@ -1,4 +1,4 @@
-<h1 align="center">API REST - FORORACLE (Backend para Foro participativo)</h1>
+<h1 align="center">API REST - FORORACLE</h1>
 
 ![readmeFororacle](https://github.com/user-attachments/assets/10cc24dd-106f-4a12-97da-487a07ae6fc0)
 
