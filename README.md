@@ -94,7 +94,9 @@ de la base de datos, esto es una buena práctica, ya que no perderemos por compl
 ![visualizacionDeEnpointsDesdeInsomnia](https://github.com/user-attachments/assets/9b5df751-a5c9-4c76-af45-bb2e1fee368e)
 
 <hr>
+
 <p align="justify">El proyecto está realizado bajo una arquitectura en capas modularizado, y sus tecnologías son: </p>
+
 ## 🧠 Tecnologías utilizadas: 
 - Java 17.0:
   - Java Streams y Lambdas
