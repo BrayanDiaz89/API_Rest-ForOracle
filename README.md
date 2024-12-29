@@ -43,6 +43,8 @@ sus condiciones de creación de registros y qué poderes tiene esta <b>API.</b><
 
 <p align="justify">
 🧱 Como se observa en el modelado de la base de datos, las relaciones son: 
+</p>
+<p align="justify">
   👉 Estudiantes - cursos: Relación 1 a muchos, un estudiante puede pertenecer a un curso, pero un curso puede tener varios estudiantes
   👉 Cursos - topicos: Relación 1 a muchos, un curso tiene varios tópicos, pero un tópico pertenece a un único curso.
   👉 Estudiantes - topicos: Relación 1 a muchos, un estudiante puede crear varios tópicos, pero cada tópico, pertenece a un estudiante.
