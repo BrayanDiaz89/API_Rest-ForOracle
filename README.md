@@ -100,7 +100,6 @@ de la base de datos, esto es una buena práctica, ya que no perderemos por compl
 ## 🧠 Tecnologías utilizadas: 
 - Java 17.0:
   - Java Streams y Lambdas
-  - Colecciones Java
 - Spring Framework (versión: 3.4.0):
   - Spring Boot
   - Spring Data JPA
