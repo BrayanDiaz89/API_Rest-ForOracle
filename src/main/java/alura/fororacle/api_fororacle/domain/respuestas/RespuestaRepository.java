@@ -29,21 +29,25 @@ RespuestaRepository extends JpaRepository<Respuesta, Long> {
     Page<Respuesta> findByIdEstudianteNotNullAndRespuestaActiva(Pageable paginacion);
 
     @Query("""
-            SELECT CASE WHEN COUNT(r) > 0 THEN true ELSE false END
-            FROM Respuesta r
-            WHERE r.instructor.id = :idInstructor
-            AND r.id = :idRespuesta
-            AND r.topico.id = :idTopico
-           """)
+       SELECT EXISTS (
+           SELECT 1
+           FROM Respuesta r
+           WHERE r.instructor.id = :idInstructor
+           AND r.id = :idRespuesta
+           AND r.topico.id = :idTopico
+       )
+       """)
     Boolean findByCoincidenciaIdInstructorAndIdRespuesta(Long idInstructor, Long idRespuesta, Long idTopico);
 
     @Query("""
-            SELECT CASE WHEN COUNT(r) > 0 THEN true ELSE false END
-            FROM Respuesta r
-            WHERE r.estudiante.id = :idEstudiante
-            AND r.id = :idRespuesta
-            AND r.topico.id = :idTopico
-           """)
+       SELECT EXISTS (
+           SELECT 1
+           FROM Respuesta r
+           WHERE r.instructor.id = :idEstudiante
+           AND r.id = :idRespuesta
+           AND r.topico.id = :idTopico
+       )
+       """)
     Boolean findByCoincidenciaIdEstudianteAndIdRespuesta(Long idEstudiante, Long idRespuesta, Long idTopico);
 
     @Query("""

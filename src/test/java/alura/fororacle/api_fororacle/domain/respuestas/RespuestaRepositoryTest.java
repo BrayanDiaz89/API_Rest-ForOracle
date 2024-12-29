@@ -32,7 +32,7 @@ class RespuestaRepositoryTest {
     private EntityManager em;
 
     @Test
-    @DisplayName("Debería devolver Null, si los id de instructor, topico y respuesta no coinciden.")
+    @DisplayName("Debería devolver true, si los id de instructor, topico y respuesta coinciden o false en caso de no coincidir.")
     void findByCoincidenciaIdInstructorAndIdRespuestaEscenario1() {
         //given o arrange
         var fecha = LocalDateTime.now();
@@ -48,7 +48,7 @@ class RespuestaRepositoryTest {
     }
 
     @Test
-    @DisplayName("Debería devolver true, si el topico fue creado por el id del estudiante que se ingresa en la consulta.")
+    @DisplayName("Debería devolver true, si los id de estudiante, topico y respuesta coinciden o false en caso de no coincidir.")
     void findByCoincidenciaIdEstudianteAndIdRespuestaEscenario1() {
         //given o arrange
         var fecha = LocalDateTime.now();
@@ -64,7 +64,10 @@ class RespuestaRepositoryTest {
     }
 
     @Test
-    @DisplayName("Debería devolver true, si el topico fue creado por el id del estudiante que se ingresa en la consulta.")
+    @DisplayName(""" 
+                Debería devolver true, si el topico fue creado por el id del estudiante 
+                que se ingresa en la consulta y además la respuesta no haya sido eliminada, su estado sea activo.
+            """)
     void findByActivoTrueAndIsIdRespuestaEscenario1() {
         //given o arrange
         var fecha = LocalDateTime.now();
@@ -72,7 +75,7 @@ class RespuestaRepositoryTest {
         var estudiante = registrarEstudiante(curso, "Brayan", "brayan@gmail.com",fecha, true);
         var instructor = registrarInstructor(curso,"Artur", "artur@gmail.com",fecha,true);
         var topico = registrarTopico(curso, estudiante, "Dudas en python", "no se como usarlo",fecha, true);
-        var respuesta = registrarRespuesta(estudiante, instructor, "contenido xd", fecha, topico, false);
+        var respuesta = registrarRespuesta(estudiante, instructor, "contenido xd", fecha, topico, true);
         //when o act
         var respuestaEstaActivaAndIdCoincideParaModificar = respuestaRepository.findByActivoTrueAndIsIdRespuesta(respuesta.getId());
         //then o assert
