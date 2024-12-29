@@ -29,7 +29,7 @@ utilizados, que serán nombrados posteriormente; Así como se mencionarán sus <
 como funcionarán estos endpoint, con las consideraciones y reglas de negocio compartidas posteriormente, así lograrás comprender las relaciones entre tablas de la base de datos,
 sus condiciones de creación de registros y qué poderes tiene esta API.</p>
 
-![siganViendo](https://github.com/user-attachments/assets/0216a590-6aa7-464c-991e-7e08ffac3427)
+![siganViendo](https://github.com/user-attachments/assets/eec823ff-2dbc-406a-b48a-0b4182e32300)
 
 
 
