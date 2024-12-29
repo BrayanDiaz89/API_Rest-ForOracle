@@ -12,14 +12,10 @@
 
 <h2>Introducción:</h2>
 <p align="justify">
-  Fororacle es un proyecto personal, que busca resolver un problema de la vida cotidiana, por medio de una API Rest, enfocada especialmente para un foro participativo,
-  el cual se liberará por medio de un login Admin, y desde este login bajo endpoints como GET, POST, PUT y DELETE, que facilitarán la visualización de los tópicos, por 
-  estudiante, sus respuestas, así como las respuestas a estos tópicos por parte de los instructores, y además todos ellos estarán relacionados a un curso específico, 
-  esto lo hace más concorde a la realidad y una resolución a un problema cotidiano.
+Fororacle es un proyecto personal diseñado para resolver un problema común de interacción educativa mediante una API REST. Su enfoque principal es ofrecer una plataforma para un foro participativo, accesible a través de un login de administrador. Esta API permite realizar operaciones sobre diversos recursos mediante endpoints como GET, POST, PUT y DELETE, facilitando la gestión y visualización de tópicos, respuestas de estudiantes, y comentarios de instructores, todo vinculado a un curso específico. Esta estructura busca reflejar un entorno educativo más realista y proporcionar una solución efectiva a un desafío cotidiano en el ámbito académico.
 </p>
 <p align="justify">
-Bienvenido!, la implementación de la <b>API</b> está realizada con <b>Java 17, Spring boot 3.4.0, Maven, Spring Security, MySQL, Hibernate,</b> entre otras tecnologías y principios
-utilizados, que serán nombrados posteriormente; Así como se mencionarán sus <b>consideraciones o reglas de negocio</b> que se han tenido en cuenta para su desarrollo.
+¡Bienvenido! La implementación de esta API se ha realizado utilizando Java 17, Spring Boot 3.4.0, Maven, Spring Security, MySQL, Hibernate, entre otras tecnologías y principios clave, que se detallarán a lo largo de la documentación. Asimismo, se presentarán las principales consideraciones y reglas de negocio que se tomaron en cuenta durante su desarrollo para garantizar una solución robusta y alineada con los requerimientos del sistema.
 </p>
 <p align="justify">Para comenzar, quiero compartirte una pequeña visualización de los endpoints disponibles, y gestionados con la herramienta <b>Insomnia:</b></p>
 
