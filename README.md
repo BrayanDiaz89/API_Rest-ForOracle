@@ -12,6 +12,24 @@
 
 <h2>Introducción:</h2>
 <p align="justify">
-  Disfruta de una experiencia inolvidable, consultando y almacenando tus libros favoritos personalizadamente en tu ambiente local.
+  Fororacle es una API Rest, enfocada especialmente para un foro participativo, el cual se liberará por medio de un login Admin, y desde este login
+  bajo endpoints como GET, POST, PUT y DELETE, que facilitarán la visualización de los tópicos, por estudiante, sus respuestas, así como las respuestas
+  a estos tópicos por parte de los instructores, y además todos ellos estarán relacionados a un curso específico, esto lo hace más concorde a la realidad
+  y una resolución a un problema cotidiano.
 </p>
-Implementación de una API REST para un foro online participativo, realizado con Java 22, Spring boot, Maven, Spring Security, MySQL
+<p align="justify">
+Bienvenido!, la implementación de la <b>API</b> está realizada con <b>Java 17, Spring boot 3.4.0, Maven, Spring Security, MySQL, Hibernate,</b> entre otras tecnologías y principios
+utilizados, que serán nombrados posteriormente; Así como se mencionarán sus <b>consideraciones o reglas de negocio</b> que se han tenido en cuenta para su desarrollo.
+</p>
+<p align="justify">Para comenzar, quiero compartirte una pequeña visualización de los endpoints disponibles, y gestionados con la herramienta <b>Insomnia:</b></p>
+
+![EndpointsInsomniaAPIFororacle](https://github.com/user-attachments/assets/d4b1e741-e468-4a5c-a94c-a0ca458e39da)
+
+<p align="justify">Como se observa arriba ↑, allí solo se visualiza una parte de los endpoints disponibles, conforme avances en la presente documentación, entenderás de mejor manera
+como funcionarán estos endpoint, con las consideraciones y reglas de negocio compartidas posteriormente, así lograrás comprender las relaciones entre tablas de la base de datos,
+sus condiciones de creación de registros y qué poderes tiene esta API.</p>
+
+![siganViendo](https://github.com/user-attachments/assets/0216a590-6aa7-464c-991e-7e08ffac3427)
+
+
+
