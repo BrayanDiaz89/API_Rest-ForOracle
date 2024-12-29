@@ -30,7 +30,9 @@ como funcionarán estos endpoint, con las consideraciones y reglas de negocio co
 sus condiciones de creación de registros y qué poderes tiene esta API.</p>
 
 <p align="justify">
+  
 ![siganViendo](https://github.com/user-attachments/assets/fe1fe25f-31aa-4c05-98f9-4de5404b2ce7)
+
 </p>
 
 
