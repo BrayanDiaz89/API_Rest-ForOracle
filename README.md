@@ -38,7 +38,7 @@ sus condiciones de creación de registros y qué poderes tiene esta <b>API.</b><
   </table>
 </p>
 
-![tercerModeladoBd](https://github.com/user-attachments/assets/f045c586-2501-4115-8ff9-957c7358d50d)
+![modeladoBaseDatos](https://github.com/user-attachments/assets/db9ee711-87d0-4648-8ace-db349f6e00d3)
 
 
 <p align="justify">
