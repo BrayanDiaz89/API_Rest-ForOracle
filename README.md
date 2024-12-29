@@ -38,6 +38,21 @@ sus condiciones de creación de registros y qué poderes tiene esta <b>API.</b><
   </table>
 </p>
 
+![tercerModeladoBd](https://github.com/user-attachments/assets/f045c586-2501-4115-8ff9-957c7358d50d)
+
+
+<p align="justify">
+🧱 Como se observa en el modelado de la base de datos, las relaciones son: 
+  👉 Estudiantes - cursos: Relación 1 a muchos, un estudiante puede pertenecer a un curso, pero un curso puede tener varios estudiantes
+  👉 Cursos - topicos: Relación 1 a muchos, un curso tiene varios tópicos, pero un tópico pertenece a un único curso.
+  👉 Estudiantes - topicos: Relación 1 a muchos, un estudiante puede crear varios tópicos, pero cada tópico, pertenece a un estudiante.
+  👉 Estudiantes - respuestas: Relación 1 a muchos, un estudiante puede dar múltiples respuestas, pero cada respuesta pertenece a un estudiante.
+  👉 Topicos - respuestas: Relación 1 a muchos, un tópico puede tener múltiples respuestas, pero una respuesta pertenece a un único tópico.
+  👉 Instructores - cursos: Relación 1 a muchos, un estudiante puede pertenecer a un curso, pero un curso puede tener varios estudiantes
+  👉 Instructores - respuestas: Relación 1 a muchos, un instructor puede dar múltiples respuestas, pero cada respuesta pertenece a un instructor.
+</p>
+
+
 
 
 
