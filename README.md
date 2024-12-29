@@ -38,9 +38,9 @@ sus condiciones de creación de registros y qué poderes tiene esta <b>API.</b><
   </table>
 </p>
 
-![consideracionesFororacle](https://github.com/user-attachments/assets/714163f6-41a9-49b2-bc8a-34cae45af4b2)
+![consideracionesFororacle](https://github.com/user-attachments/assets/faf10061-e1a1-416f-b1cc-5524cffe2bff)
 
-![reglasDelNegocioFororacle](https://github.com/user-attachments/assets/735d0f75-b1a8-4b46-afcc-50de309b2e81)
+![reglasDelNegocioFororacle](https://github.com/user-attachments/assets/60ef538c-9daf-490f-b4b4-efc1e46fab4f)
 
 
 
