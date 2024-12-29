@@ -56,8 +56,7 @@ sus condiciones de creación de registros y qué poderes tiene esta <b>API.</b><
   </table>
 </p>
 
-![modeladoBaseDatos](https://github.com/user-attachments/assets/db9ee711-87d0-4648-8ace-db349f6e00d3)
-
+![modeladoDeLaBaseDatos](https://github.com/user-attachments/assets/9f1361ea-9580-408b-b347-8d15d3e08088)
 
 <p align="justify">
 🧱 Como se observa en el modelado de la base de datos, las relaciones son: 
