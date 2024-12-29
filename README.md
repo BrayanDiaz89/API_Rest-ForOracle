@@ -27,15 +27,17 @@ utilizados, que serán nombrados posteriormente; Así como se mencionarán sus <
 
 <p align="justify">Como se observa arriba ↑, allí solo se visualiza una parte de los endpoints disponibles, conforme avances en la presente documentación, entenderás de mejor manera
 como funcionarán estos endpoint, con las consideraciones y reglas de negocio compartidas posteriormente, así lograrás comprender las relaciones entre tablas de la base de datos,
-sus condiciones de creación de registros y qué poderes tiene esta API.</p>
+sus condiciones de creación de registros y qué poderes tiene esta <b>API.</b></p>
 
 <p align="justify">
-  
-![siganViendo](https://github.com/user-attachments/assets/fe1fe25f-31aa-4c05-98f9-4de5404b2ce7)
-
-<p position="right">-> hola mundo </p>
-
+  <span style="display: inline-block; vertical-align: middle;">
+    <img src="https://github.com/user-attachments/assets/fe1fe25f-31aa-4c05-98f9-4de5404b2ce7" alt="siganViendo" />
+  </span>
+  <span style="display: inline-block; vertical-align: middle;">
+    → A continuación se visualizará el modelado de la base de datos, en la parte inferior ↓, para comprender de mejor manera la estructura de la <b>API:</b>
+  </span>
 </p>
+
 
 
 
