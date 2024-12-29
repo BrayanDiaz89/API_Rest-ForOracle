@@ -38,23 +38,14 @@ sus condiciones de creación de registros y qué poderes tiene esta <b>API.</b><
   </table>
 </p>
 
-![consideracionesFororacle](https://github.com/user-attachments/assets/faf10061-e1a1-416f-b1cc-5524cffe2bff)
-
-![reglasDelNegocioFororacle](https://github.com/user-attachments/assets/69156132-c674-4270-aa43-7b42839c1fc6)
-
-
-
-
 <p align="justify">
   <table>
     <tr>
-      <td><img src="https://github.com/user-attachments/assets/fe1fe25f-31aa-4c05-98f9-4de5404b2ce7" alt="siganViendo" /></td>
-      <td>A continuación se visualizarán las consideraciones y reglas del negocio que se tuvieron en cuenta para el desarrollo de la <b>API:</b>⬇️</td>
+      <td><img src="https://github.com/user-attachments/assets/faf10061-e1a1-416f-b1cc-5524cffe2bff" alt="consideraciones" /></td>
+      <td><img src="https://github.com/user-attachments/assets/69156132-c674-4270-aa43-7b42839c1fc6" alt="reglasDelNegocio" /></td>
     </tr>
   </table>
 </p>
-
-
 
 <p align="justify">
   <table>
