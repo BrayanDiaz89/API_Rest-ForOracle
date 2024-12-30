@@ -73,7 +73,7 @@ de la base de datos, esto es una buena práctica, ya que no perderemos por compl
 </p>
 <hr>
 
-# 🔨 Explicación general acerca de los Endpoints desarrollados en la API:
+# 🎨 Explicación general acerca de los Endpoints desarrollados en la API:
 - `GET`: Todos las entidades cuentan con el método GET, para obtener la lista de registros, con las consideraciones y reglas anteriormente mencionadas. También cuentan con un GET por id, para obtener específicamente de una entidad, el recurso que se busca.
 - `POST`: Todas las entidades pueden ser gestionadas mediante POST, para permitir la agregación de nuevos registros en ellas.
 - `PUT`: Todas las entidades cuentan con el poder de actualización en sus registros, siempre y cuando se cumplan las reglas anteriormente mencionadas.
@@ -163,7 +163,7 @@ Algo importante que destacar de nuestro aplication properties, es que el valor q
 
 ![secretKey](https://github.com/user-attachments/assets/4644369f-362e-4d37-87e5-6102e178affc)
 
-Debe ser el mismo valor de la contraseña del usuario ADMIN, ya que si estas no coinciden, no se logrará una validación exitosa.
+🔐 Debe ser el mismo valor de la contraseña del usuario ADMIN, ya que si estas no coinciden, no se logrará una validación exitosa.
 
 - `NOTA`: Debes crear la base de datos en tú gestor de base de datos MySql, con el mismo nombre, que la llamaste en properties. Así ella, automáticamente la reconocerá y realizará las migraciones necesarias para poner en funcionamiento la API. Posteriormente es necesario crear un tú usario admin en la tabla usuarios, con la contraseña, que colocaste en tú variable de entorno. Si este proceso se omite, tendrá problemas al ejecutar o administrar la API.
   
