@@ -158,7 +158,8 @@ En el menú de la izquierda, haz click en la carpeta resources, 🧱 ingresa a <
 ![applicationProperties](https://github.com/user-attachments/assets/adadf511-d37c-4661-ba27-cdabfcac041e)
 
 <p align="justify">
-  - NOTA: Debes crear la base de datos en tú gestor de base de datos MySql, con el mismo nombre, que la llamaste en properties. Así ella, automáticamente la reconocerá y realizará las migraciones necesarias para poner en funcionamiento la API.
+  
+- `NOTA`: Debes crear la base de datos en tú gestor de base de datos MySql, con el mismo nombre, que la llamaste en properties. Así ella, automáticamente la reconocerá y realizará las migraciones necesarias para poner en funcionamiento la API.
   
 Una vez configurado lo anterior, ya podrás utilizar correctamente la aplicación. Ve a la clase principal y dale click en ejecutar:
 </p>
@@ -167,9 +168,10 @@ Una vez configurado lo anterior, ya podrás utilizar correctamente la aplicació
 
 <p align="justify">
 ✔️ ¡Listo!, una vez la ejecución se haya realizado con éxito, podrás ingresar a las siguientes url:
-  - http://localhost:8080/v3/api-docs Esta opción es bastante técnica, te recomiendo la segunda opción.
-  - http://localhost:8080/swagger-ui.html Desde aquí podrás gestionar la API de una manera más intuitiva.
-  - NOTA: Debes primero crear tú usuario en tú tabla usuarios desde la base de datos, para que posteriormente pueda ser logeado y utilice los recursos como ADMIN de la API.
+  
+  - `http://localhost:8080/v3/api-docs Esta opción es bastante técnica, te recomiendo la segunda opción.`
+  - `http://localhost:8080/swagger-ui.html Desde aquí podrás gestionar la API de una manera más intuitiva.`
+  - `NOTA: Debes primero crear tú usuario en tú tabla usuarios desde la base de datos, para que posteriormente pueda ser logeado y utilice los recursos como ADMIN de la API.`
 </p>
 
 <hr>
