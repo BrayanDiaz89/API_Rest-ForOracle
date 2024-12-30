@@ -175,9 +175,9 @@ Una vez configurado lo anterior, ya podrás utilizar correctamente la aplicació
 <p align="justify">
 ✔️ ¡Listo!, una vez la ejecución se haya realizado con éxito, podrás ingresar a las siguientes url:
   
-  - `http://localhost:8080/v3/api-docs Esta opción es bastante técnica, te recomiendo la segunda opción.`
-  - `http://localhost:8080/swagger-ui.html Desde aquí podrás gestionar la API de una manera más intuitiva.`
-  - `NOTA: Debes logearte con el usuario admin anteriormente creado y configurado con su variable de entorno, para que pueda utilizar los recursos de la API como ADMIN.`
+  - `http://localhost:8080/v3/api-docs` Esta opción es bastante técnica, te recomiendo la segunda opción.
+  - `http://localhost:8080/swagger-ui.html` Desde aquí podrás gestionar la API de una manera más intuitiva.
+  - `NOTA:` Debes logearte con el usuario admin anteriormente creado y configurado con su variable de entorno, para que pueda utilizar los recursos de la API como ADMIN.
 </p>
 
 <hr>
