@@ -128,6 +128,72 @@ de la base de datos, esto es una buena práctica, ya que no perderemos por compl
   - Manejo de configuraciones sensibles a través de variables de entorno y application.properties.
 <hr>
 
+## 📂 Acceso al proyecto: 
+![TutorialdeDescarga](https://github.com/user-attachments/assets/45294179-c3ac-45c6-9989-4311f6b82b50)
+<p>Dale click en <strong style="color:red">Download ZIP</strong>.</p>
+<p>Posteriormente, asegúrate de tener instalado un editor de código, preferiblemente IntelliJ. Desde allí:</p>
+
+![Tutorialdescarga1](https://github.com/user-attachments/assets/15e48718-903c-444f-9604-d50bf9d2d32c)
+
+<p align="justify">
+Dale click en el menú y selecciona "Open File" para abrir la carpeta descomprimida. Luego podrás navegar en las carpetas de la izquierda, como se muestra en el despliegue a continuación:
+</p>
+
+![ejecutarElProyecto](https://github.com/user-attachments/assets/3be8aec8-1d23-4d3a-a7d9-fdc399336472)
+
+<p align="justify">
+<b>Antes de ejecutar</b>, es importante ajustar tus variables de entorno en Windows o Linux. A continuación, un breve ejemplo de cómo encontrarlas en <b>Windows</b> (En inicio escribe variables de entorno) y abrirás la siguiente ventana:
+</p>
+
+![variables_de_entorno](https://github.com/user-attachments/assets/04e90722-40ba-4cf3-b2d5-0ad8c1304843)
+
+<p align="justify">
+Haz click en "Variables de entorno" y modifícalas según sea necesario. ⬆️
+</p>
+
+<p align="justify">
+En el menú de la izquierda, haz click en la carpeta resources, 🧱 ingresa a <b>application.properties</b> y verás las variables de entorno configuradas. Puedes ajustarlas para que coincidan con tu configuración:
+</p>
+
+![applicationProperties](https://github.com/user-attachments/assets/adadf511-d37c-4661-ba27-cdabfcac041e)
+
+<p align="justify">
+  - NOTA: Debes crear la base de datos en tú gestor de base de datos MySql, con el mismo nombre, que la llamaste en properties. Así ella, automáticamente la reconocerá y realizará las migraciones necesarias para poner en funcionamiento la API.
+  
+Una vez configurado lo anterior, ya podrás utilizar correctamente la aplicación. Ve a la clase principal y dale click en ejecutar:
+</p>
+
+![ejecutarMain](https://github.com/user-attachments/assets/4d4ae4e6-e1e5-4cc0-9e36-c6cfddfc911c)
+
+<p align="justify">
+✔️ ¡Listo!, una vez la ejecución se haya realizado con éxito, podrás ingresar a las siguientes url:
+  - http://localhost:8080/v3/api-docs Esta opción es bastante técnica, te recomiendo la segunda opción.
+  - http://localhost:8080/swagger-ui.html Desde aquí podrás gestionar la API de una manera más intuitiva.
+  - NOTA: Debes primero crear tú usuario en tú tabla usuarios desde la base de datos, para que posteriormente pueda ser logeado y utilice los recursos como ADMIN de la API.
+</p>
+
+<hr>
+
+## Autor:
+
+| [<img src="https://avatars.githubusercontent.com/u/166320575?s=400&u=d0ae42a77ad4a0d990a57bb194d54e427bd34df3&v=4" width=115><br><sub>Brayan Díaz</sub>](https://github.com/BrayanDiaz89) |
+| :---: |
+
+<hr>
+
+## 🥇 Créditos:
+
+<p align="justify"> 
+Gracias a <a href="https://www.aluracursos.com/" target="_blank"><strong>Alura LATAM</strong></a> y a <a href="https://www.oracle.com/co/education/oracle-next-education/" target="_blank"><strong>Oracle Next Education</strong></a> por esta gran oportunidad!.
+
+
+
+
+
+
+
+
+
 
 
 
