@@ -158,7 +158,13 @@ En el menú de la izquierda, haz click en la carpeta resources, 🧱 ingresa a <
 ![applicationProperties](https://github.com/user-attachments/assets/adadf511-d37c-4661-ba27-cdabfcac041e)
 
 <p align="justify">
-  
+
+Algo importante que destacar de nuestro aplication properties, es que el valor que guardes en tú variable de entorno:
+
+![secretKey](https://github.com/user-attachments/assets/4644369f-362e-4d37-87e5-6102e178affc)
+
+Debe ser el mismo valor de la contraseña del usuario ADMIN, ya que si estas no coinciden, no se logrará una validación exitosa.
+
 - `NOTA`: Debes crear la base de datos en tú gestor de base de datos MySql, con el mismo nombre, que la llamaste en properties. Así ella, automáticamente la reconocerá y realizará las migraciones necesarias para poner en funcionamiento la API.
   
 Una vez configurado lo anterior, ya podrás utilizar correctamente la aplicación. Ve a la clase principal y dale click en ejecutar:
