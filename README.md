@@ -165,7 +165,7 @@ Algo importante que destacar de nuestro aplication properties, es que el valor q
 
 Debe ser el mismo valor de la contraseña del usuario ADMIN, ya que si estas no coinciden, no se logrará una validación exitosa.
 
-- `NOTA`: Debes crear la base de datos en tú gestor de base de datos MySql, con el mismo nombre, que la llamaste en properties. Así ella, automáticamente la reconocerá y realizará las migraciones necesarias para poner en funcionamiento la API.
+- `NOTA`: Debes crear la base de datos en tú gestor de base de datos MySql, con el mismo nombre, que la llamaste en properties. Así ella, automáticamente la reconocerá y realizará las migraciones necesarias para poner en funcionamiento la API. Posteriormente es necesario crear un tú usario admin en la tabla usuarios, con la contraseña, que colocaste en tú variable de entorno. Si este proceso se omite, tendrá problemas al ejecutar o administrar la API.
   
 Una vez configurado lo anterior, ya podrás utilizar correctamente la aplicación. Ve a la clase principal y dale click en ejecutar:
 </p>
@@ -177,7 +177,7 @@ Una vez configurado lo anterior, ya podrás utilizar correctamente la aplicació
   
   - `http://localhost:8080/v3/api-docs Esta opción es bastante técnica, te recomiendo la segunda opción.`
   - `http://localhost:8080/swagger-ui.html Desde aquí podrás gestionar la API de una manera más intuitiva.`
-  - `NOTA: Debes primero crear tú usuario en tú tabla usuarios desde la base de datos, para que posteriormente pueda ser logeado y utilice los recursos como ADMIN de la API.`
+  - `NOTA: Debes logearte con el usuario admin anteriormente creado y configurado con su variable de entorno, para que pueda utilizar los recursos de la API como ADMIN.`
 </p>
 
 <hr>
