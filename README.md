@@ -73,7 +73,7 @@ de la base de datos, esto es una buena práctica, ya que no perderemos por compl
 </p>
 <hr>
 
-# 🔨 Expliación general acerca de los Endpoints desarrollados en la API:
+# 🔨 Explicación general acerca de los Endpoints desarrollados en la API:
 - `GET`: Todos las entidades cuentan con el método GET, para obtener la lista de registros, con las consideraciones y reglas anteriormente mencionadas. También cuentan con un GET por id, para obtener específicamente de una entidad, el recurso que se busca.
 - `POST`: Todas las entidades pueden ser gestionadas mediante POST, para permitir la agregación de nuevos registros en ellas.
 - `PUT`: Todas las entidades cuentan con el poder de actualización en sus registros, siempre y cuando se cumplan las reglas anteriormente mencionadas.
