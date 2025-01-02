@@ -165,7 +165,7 @@ Algo importante que destacar de nuestro aplication properties, es que el valor q
 
 🔐 Debe ser el mismo valor de la contraseña del usuario ADMIN, ya que si estas no coinciden, no se logrará una validación exitosa.
 
-- `NOTA`: Debes crear la base de datos en tú gestor de base de datos MySql, con el mismo nombre, que la llamaste en properties. Así ella, automáticamente la reconocerá y realizará las migraciones necesarias para poner en funcionamiento la API. Posteriormente es necesario crear un tú usario admin en la tabla usuarios, con la contraseña, que colocaste en tú variable de entorno. Si este proceso se omite, tendrá problemas al ejecutar o administrar la API.
+- `NOTA`: Debes crear la base de datos en tú gestor de base de datos MySql, con el mismo nombre, que la llamaste en properties. Así ella, automáticamente la reconocerá y realizará las migraciones necesarias para poner en funcionamiento la API. Posteriormente es necesario crear un tú usuario admin en la tabla usuarios, con la contraseña, que colocaste en tú variable de entorno. Si este proceso se omite, tendrá problemas al ejecutar o administrar la API.
   
 Una vez configurado lo anterior, ya podrás utilizar correctamente la aplicación. Ve a la clase principal y dale click en ejecutar:
 </p>
