@@ -19,7 +19,8 @@ Fororacle es un proyecto personal diseñado para resolver un problema común de 
 </p>
 <p align="justify">Para comenzar, quiero compartirte una pequeña visualización de los endpoints disponibles, y gestionados con la herramienta <b>Insomnia:</b></p>
 
-![EndpointsInsomniaAPIFororacle](https://github.com/user-attachments/assets/d4b1e741-e468-4a5c-a94c-a0ca458e39da)
+![EndpointsInsomniaAPIFororacle](https://github.com/user-attachments/assets/efcb7545-bbc5-41de-bf22-986b6c6dfbfa)
+
 
 <p align="justify">Como se observa arriba ⬆️, allí solo se visualiza una parte de los endpoints disponibles, conforme avances en la presente documentación, entenderás de mejor manera
 como funcionarán estos endpoint, con las consideraciones y reglas de negocio compartidas posteriormente, así lograrás comprender las relaciones entre tablas de la base de datos,
